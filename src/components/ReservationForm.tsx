@@ -31,7 +31,7 @@ export function ReservationForm({ offers, selected, compact }: { offers: Offer[]
       <label>Wiadomość<textarea name="message" rows={3} placeholder="Skąd startujecie, czy potrzebny transport, dzieci w grupie" /></label>
       {state.message && !state.ok && <p className="form-err" role="alert">{state.message}</p>}
       <button className="btn btn-solid" disabled={pending}>{pending ? 'Wysyłanie…' : 'Wyślij zgłoszenie'}</button>
-      <p className="note">Zgłoszenie trafia do panelu recepcji. Termin potwierdzamy telefonicznie, zaliczka dopiero po rozmowie.</p>
+      <p className="note">Zgłoszenie trafia do panelu recepcji. Termin potwierdzamy telefonicznie, zaliczka dopiero po rozmowie. Wersja demonstracyjna: dane trafiają do testowego panelu Programo i są kasowane, nie wpisuj prawdziwych danych osobowych.</p>
     </form>
   )
 }
