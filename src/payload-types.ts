@@ -147,6 +147,10 @@ export interface Offer {
    */
   price?: number | null;
   /**
+   * Widełki
+   */
+  priceMax?: number | null;
+  /**
    * np. /dzień, /os./doba
    */
   unit?: string | null;
@@ -392,6 +396,7 @@ export interface OffersSelect<T extends boolean = true> {
   type?: T;
   lead?: T;
   price?: T;
+  priceMax?: T;
   unit?: T;
   priceNote?: T;
   capacity?: T;

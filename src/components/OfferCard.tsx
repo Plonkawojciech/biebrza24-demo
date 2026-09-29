@@ -11,7 +11,7 @@ export function OfferCard({ o }: { o: any }) {
         <span className="card-name">{o.name}</span>
         <span className="card-lead">{o.lead}</span>
         <span className="card-foot">
-          <span className="card-price">{o.price ? <>{zl(o.price)}<small>{o.unit}</small></> : 'Zapytaj o cenę'}</span>
+          <span className="card-price">{o.price ? <>{zl(o.price)}{o.priceMax ? ` – ${zl(o.priceMax)}` : ''}<small>{o.unit}</small></> : 'Zapytaj o cenę'}</span>
           {o.capacity && <span className="card-meta">{o.capacity}</span>}
         </span>
       </span>

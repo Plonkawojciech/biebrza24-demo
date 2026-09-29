@@ -5,7 +5,7 @@ export const OFFER_TYPES = [
   { label: 'Kajaki i canoe', value: 'kajaki' },
   { label: 'Noclegi', value: 'noclegi' },
   { label: 'Rowery i wycieczki', value: 'rowery' },
-  { label: 'Wyżywienie i regionalne', value: 'wyzywienie' },
+  { label: 'Kuchnia regionalna', value: 'wyzywienie' },
 ] as const
 
 export const Offers: CollectionConfig = {
@@ -31,9 +31,10 @@ export const Offers: CollectionConfig = {
     {
       type: 'row',
       fields: [
-        { name: 'price', label: 'Cena (zł)', type: 'number', admin: { width: '25%', description: 'Puste = „zapytaj”' } },
-        { name: 'unit', label: 'Jednostka', type: 'text', admin: { width: '25%', description: 'np. /dzień, /os./doba' } },
-        { name: 'priceNote', label: 'Dopisek do ceny', type: 'text', admin: { width: '50%', description: 'np. „pierwszy dzień z transportem 500 zł”' } },
+        { name: 'price', label: 'Cena (zł)', type: 'number', admin: { width: '20%', description: 'Puste = „zapytaj”' } },
+        { name: 'priceMax', label: 'Do (zł)', type: 'number', admin: { width: '15%', description: 'Widełki' } },
+        { name: 'unit', label: 'Jednostka', type: 'text', admin: { width: '20%', description: 'np. /dzień, /os./doba' } },
+        { name: 'priceNote', label: 'Dopisek do ceny', type: 'text', admin: { width: '45%', description: 'np. „pierwszy dzień z transportem 500 zł”' } },
       ],
     },
     {

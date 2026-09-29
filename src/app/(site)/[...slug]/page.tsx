@@ -75,10 +75,10 @@ export default async function Page({ params }: Props) {
         <div className="section"><div className="wrap obody">
           <article>
             <dl className="facts wide">
-              {o.capacity && <div><dt>Załoga</dt><dd>{o.capacity}</dd></div>}
+              {o.capacity && <div><dt>Osoby</dt><dd>{o.capacity}</dd></div>}
               {o.duration && <div><dt>Czas</dt><dd>{o.duration}</dd></div>}
               {o.season && <div><dt>Sezon</dt><dd>{o.season}</dd></div>}
-              <div><dt>Cena</dt><dd>{o.price ? <>{zl(o.price)}<small>{o.unit}</small></> : 'zapytaj'}</dd></div>
+              <div><dt>Cena</dt><dd>{o.price ? <>{zl(o.price)}{o.priceMax ? ` – ${zl(o.priceMax)}` : ''}<small>{o.unit}</small></> : 'zapytaj'}</dd></div>
             </dl>
             {o.priceNote && <p className="note">{o.priceNote}</p>}
             {(o.sections || []).map((sec: any) => <section key={sec.id} className="osec"><h2 className="h3">{sec.title}</h2><p>{sec.body}</p></section>)}
@@ -124,7 +124,7 @@ export default async function Page({ params }: Props) {
           )
         })}
         <div className="infobox">
-          <p>Dzieci do lat 2 w pokoju z rodzicami, bez oddzielnego łóżka, nocują bezpłatnie. Dzieci do 12 lat mogą korzystać z porcji dziecięcych tańszych o 10 zł. Doba hotelowa od 14:00 do 11:00. Parking i Wi-Fi bezpłatne. W całym obiekcie obowiązuje zakaz palenia.</p>
+          <p>Dzieci do lat 2 w pokoju z rodzicami, bez oddzielnego łóżka, nocują bezpłatnie. Dzieci do 12 lat mogą korzystać z porcji dziecięcych tańszych o 10 zł. Doba hotelowa od 14:00 do 11:00. Parking bezpłatny dla gości nocujących w pokojach, Wi-Fi bezpłatne w całym obiekcie. Obowiązuje zakaz palenia poza wyznaczonymi miejscami.</p>
           <p>Do cen nie wliczamy usług dodatkowych. Usługa flisacka od 500 zł. Do pierwszego dnia wypożyczenia tratwy doliczamy transport. Sprawdź też cennik opłat Biebrzańskiego Parku Narodowego.</p>
         </div>
       </div></div>

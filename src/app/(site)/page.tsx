@@ -29,7 +29,7 @@ export default async function Home() {
           <Link href="/tratwy"><b>Tratwy</b><span>2 godziny do 7 dni na rzece</span></Link>
           <Link href="/kajaki"><b>Kajaki i canoe</b><span>Biebrza i Kanał Augustowski</span></Link>
           <Link href="/noclegi"><b>Noclegi</b><span>pokoje, domek, szałasy, pole</span></Link>
-          <Link href="/rowery"><b>Rowery i piesze</b><span>szlaki Biebrzańskiego PN</span></Link>
+          <Link href="/rowery"><b>Rowery i wycieczki</b><span>szlaki Biebrzańskiego PN</span></Link>
         </div></div>
       </section>
 
@@ -41,9 +41,9 @@ export default async function Home() {
             <h2 className="h2">Tratwa biebrzańska. Dom na wodzie, który płynie z nurtem.</h2>
             <p className="lead">{raft.lead}</p>
             <dl className="facts">
-              {raft.capacity && <div><dt>Załoga</dt><dd>{raft.capacity}</dd></div>}
+              {raft.capacity && <div><dt>Osoby</dt><dd>{raft.capacity}</dd></div>}
               {raft.duration && <div><dt>Czas</dt><dd>{raft.duration}</dd></div>}
-              {raft.price && <div><dt>Cena</dt><dd>{zl(raft.price)}<small>{raft.unit}</small></dd></div>}
+              {raft.price && <div><dt>Cena</dt><dd>{zl(raft.price)}{raft.priceMax ? ` – ${zl(raft.priceMax)}` : ''}<small>{raft.unit}</small></dd></div>}
             </dl>
             <div className="cta-row"><Link className="btn btn-solid" href={`/oferta/${raft.slug}`}>Zobacz spływ</Link><Link className="btn btn-line" href="/tratwy">Wszystkie spływy tratwą</Link></div>
           </div>

@@ -6,7 +6,7 @@ type Offer = { id: number; name: string }
 
 export function ReservationForm({ offers, selected, compact }: { offers: Offer[]; selected?: number; compact?: boolean }) {
   const [state, action, pending] = useActionState<FormState, FormData>(createReservation, { ok: false, message: '' })
-  if (state.ok) return <div className="done"><strong>Dziękujemy.</strong> {state.message}</div>
+  if (state.ok) return <div className="done" role="status"><strong>Dziękujemy.</strong> {state.message}</div>
   return (
     <form action={action} className="form">
       {!compact && (
@@ -29,7 +29,7 @@ export function ReservationForm({ offers, selected, compact }: { offers: Offer[]
       <label>Imię i nazwisko<input name="name" required autoComplete="name" /></label>
       <label>E-mail<input name="email" type="email" autoComplete="email" /></label>
       <label>Wiadomość<textarea name="message" rows={3} placeholder="Skąd startujecie, czy potrzebny transport, dzieci w grupie" /></label>
-      {state.message && !state.ok && <p className="form-err">{state.message}</p>}
+      {state.message && !state.ok && <p className="form-err" role="alert">{state.message}</p>}
       <button className="btn btn-solid" disabled={pending}>{pending ? 'Wysyłanie…' : 'Wyślij zgłoszenie'}</button>
       <p className="note">Zgłoszenie trafia do panelu recepcji. Termin potwierdzamy telefonicznie, zaliczka dopiero po rozmowie.</p>
     </form>

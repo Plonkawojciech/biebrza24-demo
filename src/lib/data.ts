@@ -25,6 +25,6 @@ export const TYPE_LABEL: Record<string, string> = {
   kajaki: 'Kajaki i canoe',
   noclegi: 'Noclegi',
   rowery: 'Rowery i wycieczki',
-  wyzywienie: 'Wyżywienie i regionalne',
+  wyzywienie: 'Kuchnia regionalna',
 }
 export const TYPE_ORDER = ['tratwy', 'kajaki', 'noclegi', 'rowery', 'wyzywienie']

@@ -9,7 +9,7 @@ export const Reservations: CollectionConfig = {
     defaultColumns: ['name', 'offerName', 'dateFrom', 'dateTo', 'persons', 'phone', 'status', 'createdAt'],
     description: 'Każdy formularz ze strony ląduje tutaj. Status zmienia recepcja.',
   },
-  access: { create: () => true },
+  access: { create: () => false, read: ({ req }) => !!req.user },
   fields: [
     { name: 'offer', label: 'Pozycja oferty', type: 'relationship', relationTo: 'offers' },
     { name: 'offerName', label: 'Oferta', type: 'text', virtual: 'offer.name', admin: { hidden: true } },
