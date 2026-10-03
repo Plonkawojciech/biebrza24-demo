@@ -59,7 +59,7 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
               <ul>{s.domains.map((d) => <li key={d.id}><span>{d.host}</span>{d.note && <small>{d.note}</small>}</li>)}</ul>
             </div>
           )}
-          <div className="cr"><span>© 1999–{new Date().getFullYear()} Biebrza24, Sztabin</span><span>Wersja demonstracyjna nowej strony · Programo s.j.</span></div>
+          <div className="cr"><span>© 1999–{new Date().getFullYear()} Biebrza24, Sztabin</span><span>Wersja demonstracyjna nowej strony · {/* eslint-disable-next-line @next/next/no-img-element */}<a href="https://programo.pl"><img src="/programo-logo-white.svg" alt="Programo s.j." width={90} height={16} style={{ height: 16, width: "auto", verticalAlign: "middle" }} /></a></span></div>
         </div></footer>
       </body>
     </html>
